@@ -1,7 +1,7 @@
 node {
     stage ("SCM Checkout") {
 	 	cleanWs()
-           	 git url: "https://github.com/pns99/test-app"
+           	 git "https://github.com/pns99/test-app"
     }
     stage ("Compile-package") {
 	    //mvntest
