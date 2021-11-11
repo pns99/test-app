@@ -1,13 +1,8 @@
-pipeline{
-    agent any
-    triggers {
-      pollSCM '* * * * *'
-    }
-    stages{
-        stage("SCM"){
-            steps{
-               echo "job ran.....again and again"
+node {
+    stage ("SCM Checkout") {
+        git url: "https://github.com/pns99/test-app.git"
             }
-        }
+    stage ("Compile-package") {
+        sh "/opt/maven/bin/mvn package"
     }
 }
