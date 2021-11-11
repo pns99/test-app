@@ -3,6 +3,7 @@ node {
         git url: "https://github.com/pns99/test-app.git"
             }
     stage ("Compile-package") {
-        sh "/opt/maven/bin/mvn package"
+	def mvnHOME = tool name: 'mymaven', type: 'maven'
+        sh "$mvnHOME}/bin/mvn package"
     }
 }
